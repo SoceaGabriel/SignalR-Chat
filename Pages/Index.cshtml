@@ -1,0 +1,50 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Chat for fun";
+}
+
+<div class="w3-panel w3-red w3-display-container" style="display: none; padding:15px; margin-top: 20px;" id="message-error">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-display-topright">&times;</span>
+  <p style="margin-top: 1px;">Enter your name before send a message!</p>
+</div>
+
+<div class="w3-panel w3-green w3-display-container" style="display: none; padding:15px; margin-top: 20px;" id="message-add-user">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-display-topright">&times;</span>
+  <p style="margin-top: 1px;">Name added successfully!</p>
+</div>
+
+<div class="w3-container w3-center" style="margin-bottom: 30px;">
+    <span>My name is </span>
+    <input type="text" id="userName" />
+    <input class="w3-button w3-orange w3-hover-pink" type="button" id="enterName" value="Enter name"/>
+</div>
+
+<div class="row signalr-chart-container bg-chat">
+    <div>
+        <div id="messagesList"></div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <hr />
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div><textarea id="messageInput" class="signalr-chart-enter-text"></textarea></div>
+    </div>
+    <div class="row">
+        <div>
+            <input type="button" id="sendButton" class="w3-button w3-teal w3-hover-green" style="float: right; position: relative;" value="Send Message &#10148;" />
+        </div>
+    </div>
+</div><br /><br /><br/>
+
+
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>
